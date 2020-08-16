@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "921QGO35mj34psUezQ51aV6leC3SoZYr/NuxNFK2GGBemC3zv0PMo+rjgmYbMjExAGpkq8XxFtuxKtbeOJfidQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\felix\\source\\repos\\FelixNetCoreAppDemo\\FelixNetCoreAppDemo\\FelixNetCoreAppDemo.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\felix\\.nuget\\packages\\buildbundlerminifier\\3.2.449\\buildbundlerminifier.3.2.449.nupkg.sha512"
+  ],
+  "logs": []
+}
