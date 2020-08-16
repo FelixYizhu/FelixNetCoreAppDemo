@@ -22,7 +22,11 @@ namespace FelixNetCoreAppDemo
 
             // add  Interface service
             services.AddSingleton<IClock,ChinaClock>();    //once other type request IClock interface and accomplish, return instance of ChinaClock class
-            
+
+            // register Departmentservice and EmployeeService
+            services.AddSingleton<IDepartmentService, DepartmentService>();
+
+            services.AddSingleton<IEmployeeService, EmployeeService>();
 
 
 
