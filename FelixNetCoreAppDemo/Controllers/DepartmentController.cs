@@ -1,6 +1,7 @@
 ﻿using FelixNetCoreAppDemo.Models;
 using FelixNetCoreAppDemo.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,15 +12,17 @@ namespace FelixNetCoreAppDemo.Controllers
     public class DepartmentController : Controller
     {
         private readonly IDepartmentService _departmentService;
-        public DepartmentController(IDepartmentService departmentService)   
+        private readonly IOptions<ConfigOptions> _configOptions;
+        public DepartmentController(IDepartmentService departmentService,IOptions<ConfigOptions> configOptions)   
         {
             _departmentService = departmentService;
+            _configOptions = configOptions;
         }
 
         public async Task<IActionResult> Index() 
         {
             ViewBag.title = "Department Index";
-            var departments = _departmentService.GetAll();
+            var departments =await _departmentService.GetAll();
             return View(departments);
         }
 
