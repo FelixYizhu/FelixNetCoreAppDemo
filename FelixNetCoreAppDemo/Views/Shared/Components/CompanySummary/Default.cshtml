@@ -1,1 +1,14 @@
+﻿@model FelixNetCoreAppDemo.Models.CompanySummary
 
+    <div class="small">
+        <div class="col-md-10"><strong>@ViewBag.Title</strong></div>
+        <div class="row">
+            <div class="col-md-8">Total amounts of Employee: </div>
+            <div class="col-md-4">@Model.EmployeeCount</div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8">Average amounts of Employee: </div>
+            <div class="col-md-4">@Model.AverageDepartmentEmployeeCount</div>
+        </div>
+    </div>
