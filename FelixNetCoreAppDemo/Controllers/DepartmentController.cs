@@ -1,4 +1,5 @@
-﻿using FelixNetCoreAppDemo.Services;
+﻿using FelixNetCoreAppDemo.Models;
+using FelixNetCoreAppDemo.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,21 @@ namespace FelixNetCoreAppDemo.Controllers
             ViewBag.title = "Department Index";
             var departments = _departmentService.GetAll();
             return View(departments);
+        }
+
+        public IActionResult Add() 
+        {
+            ViewBag.title = "Add Department";
+            return View(new Department());
+        }
+        [HttpPost]
+        public async Task<IActionResult> Add(Department model)
+        {
+            if (ModelState.IsValid) 
+            {
+                await _departmentService.Add(model);
+            }
+            return RedirectToAction(nameof(Index));
         }
     }
 }
